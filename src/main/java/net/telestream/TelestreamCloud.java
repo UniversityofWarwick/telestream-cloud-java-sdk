@@ -1,13 +1,15 @@
-import cloud.Flip;
-import cloud.Resource;
-import cloud.TelestreamCloudCredentials;
-import cloud.TelestreamCloudRequest;
-import objects.Encoding;
-import objects.Profile;
-import objects.Video;
-import services.EncodingService;
-import services.ProfileService;
-import services.VideoService;
+package net.telestream;
+
+import net.telestream.cloud.Flip;
+import net.telestream.cloud.Resource;
+import net.telestream.cloud.TelestreamCloudCredentials;
+import net.telestream.cloud.TelestreamCloudRequest;
+import net.telestream.objects.Encoding;
+import net.telestream.objects.Profile;
+import net.telestream.objects.Video;
+import net.telestream.services.EncodingService;
+import net.telestream.services.ProfileService;
+import net.telestream.services.VideoService;
 
 import java.util.List;
 import java.util.Map;

@@ -1,4 +1,4 @@
-package objects;
+package net.telestream.objects;
 
 import java.util.Date;
 import java.util.HashMap;

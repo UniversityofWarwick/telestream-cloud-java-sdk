@@ -1,4 +1,4 @@
-package objects;
+package net.telestream.objects;
 
 /**
  * Created by maciejwitowski on 1/26/16.
