@@ -1,6 +1,7 @@
 package net.telestream.utils;
 
-import com.sun.org.apache.xerces.internal.impl.dv.util.Base64;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
@@ -14,6 +15,8 @@ import java.util.*;
  * Created by maciejwitowski on 1/21/16.
  */
 public class Utils {
+    private static final Logger LOGGER = LoggerFactory.getLogger(Utils.class);
+
     private static final String HASH_ALGORITHM = "HmacSHA256";
     public static final String UTF_8 = "UTF-8";
 
@@ -35,10 +38,9 @@ public class Utils {
             SecretKeySpec secret_key = new SecretKeySpec(key.getBytes(), HASH_ALGORITHM);
             sha256HMAC.init(secret_key);
 
-            hash = Base64.encode(sha256HMAC.doFinal(data.getBytes()));
-        }
-        catch (Exception e){
-            System.out.println("Error");
+            hash = Base64.getEncoder().encodeToString(sha256HMAC.doFinal(data.getBytes()));
+        } catch (Exception e) {
+            LOGGER.error("Error creating hash", e);
         }
 
         return hash;
